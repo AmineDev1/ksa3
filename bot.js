@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Baron','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
+    var setGame = [' KSA Community ♥','KSA Community ♥'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -125,7 +125,7 @@ const x5bz4 = [
 var prefix = "-";
 
 client.on('message', message => {
-if (message.content === "-help") {
+if (message.content === "-he") {
     let pages = [`
 ***__وصف عن البوت__***
 **
@@ -2472,5 +2472,31 @@ client.on('message', function(message) {
 		return str.toLowerCase().indexOf('youtube.com') > -1;
 	}
 });
+})
+
+
+var prefix = "*";
+
+client.on("message", message => {
+
+            if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
+};     
+});
+
+
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  **Welcome To KSA Community**:rose: 
+:crown:اسم العضو  ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
 })
 client.login(process.env.BOT_TOKEN);
