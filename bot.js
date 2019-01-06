@@ -2475,23 +2475,6 @@ client.on('message', function(message) {
 })
 
 
-var prefix = "*";
-
-client.on("message", message => {
-
-            if (message.content.startsWith(prefix + "bc")) {
-                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' '); 
-  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
- m.send(`${argresult}\n ${m}`);
-})
- message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
- message.delete(); 
-};     
-});
-
-
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(`:rose:  **Welcome To Victory Community**:rose: 
@@ -2516,5 +2499,9 @@ client.on("message", message => {
  message.delete(); 
 };     
 });
+
+client.on('ready', () => {
+    client.channels.get("531582271157829632").join();
+    });
 
 client.login(process.env.BOT_TOKEN);
