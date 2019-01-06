@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [' KSA Community ♥','KSA Community ♥'];
+    var setGame = [' Victory Community ♥','Victory Community ♥'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -429,7 +429,7 @@ client.on("guildMemberAdd", member => {
                               ctx.font = '30px Arial';
                               ctx.fontSize = '28px';
                               ctx.fillStyle = "#FFFFFF";
-      ctx.fillText(`Welcome To Server`, 245, 80);
+      ctx.fillText(`Welcome To Victory`, 245, 80);
     
                               //AVATARً
                               let Avatar = Canvas.Image;
