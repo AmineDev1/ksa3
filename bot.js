@@ -2494,7 +2494,7 @@ client.on("message", message => {
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`:rose:  **Welcome To KSA Community**:rose: 
+  return channel.send(`:rose:  **Welcome To Victory Community**:rose: 
 :crown:اسم العضو  ${member}:crown:  
 انت العضو رقم ${member.guild.memberCount} `) 
 }).catch(console.error)
